@@ -9,7 +9,7 @@ SELECT
   
   -- 2. Data Integrity Check (Target: Should return 0 missing IDs)
   COUNT(CASE WHEN account_number IS NULL THEN 1 END) AS missing_account_numbers,
-    -- 3. Financial Reconciliation Checks (Rupee-to-Rupee Balance Check)
+    -- 3. Financial Reconciliation Checks (Dollar-to-Dollar Balance Check)
   SUM(charge_amt) AS total_gross_charges_reconciled,
   SUM(insurance_balance) AS total_outstanding_ar_reconciled
 FROM 
